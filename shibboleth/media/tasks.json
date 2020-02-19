@@ -1,0 +1,13 @@
+[
+    {
+        "name": "Apache",
+        "cmd": "apachectl",
+        "args": ["-D", "FOREGROUND"],
+        "restart": true
+    },{
+        "name": "Shibboleth",
+        "cmd": "sudo",
+        "args": ["-u", "_shibd", "shibd", "-F"],
+        "restart": true
+    }
+]

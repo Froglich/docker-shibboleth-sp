@@ -1,0 +1,15 @@
+version: '3'
+services:
+  example:
+    image: nginx
+    restart: always
+
+  shibboleth:
+    image: shibboleth
+    build: shibboleth
+    ports:
+      - 443:443
+      - 80:80
+    restart: always
+    links:
+      - example

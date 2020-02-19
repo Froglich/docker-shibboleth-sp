@@ -1,0 +1,11 @@
+#!/bin/bash
+zeus /etc/zeus/tasks.json &
+
+sleep 1
+tail -f /var/log/apache2/access.log \
+    -f /var/log/apache2/error.log \
+    -f /var/log/apache2/other_vhosts_access.log \
+    -f /var/log/shibboleth/shibd.log \
+    -f /var/log/shibboleth/shibd_warn.log \
+    -f /var/log/shibboleth/signature.log \
+    -f /var/log/shibboleth/transaction.log
